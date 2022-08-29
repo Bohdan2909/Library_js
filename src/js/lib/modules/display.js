@@ -8,6 +8,7 @@ $.prototype.show = function () {
     }
     this[i].style.display = '';
   }
+
   return this;
 };
 
@@ -18,6 +19,7 @@ $.prototype.hide = function () {
     }
     this[i].style.display = 'none';
   }
+
   return this;
 };
 
@@ -26,13 +28,13 @@ $.prototype.toggle = function () {
     if (!this[i].style) {
       continue;
     }
+
     if (this[i].style.display === 'none') {
       this[i].style.display = '';
-
     } else {
-
       this[i].style.display = 'none';
     }
   }
+
   return this;
 };

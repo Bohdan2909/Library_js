@@ -192,7 +192,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.html = function (content
 
 _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.eq = function (i) {
   const swap = this[i];
-  const objLength = Object.keys().length;
+  const objLength = Object.keys(this).length;
 
   for (let i = 0; i < objLength; i++) {
     delete this[i];
@@ -235,7 +235,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.find = function (selecto
   }
 
   this.length = numberOfItems;
-  const objLength = Object.keys().length;
+  const objLength = Object.keys(this).length;
 
   for (; numberOfItems < objLength; numberOfItems++) {
     delete this[numberOfItems];
@@ -252,7 +252,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.closest = function (sele
     counter++;
   }
 
-  const objLength = Object.keys().length;
+  const objLength = Object.keys(this).length;
 
   for (; counter < objLength; counter++) {
     delete this[counter];
@@ -282,7 +282,7 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.siblings = function () {
   }
 
   this.length = numberOfItems;
-  const objLength = Object.keys().length;
+  const objLength = Object.keys(this).length;
 
   for (; numberOfItems < objLength; numberOfItems++) {
     delete this[numberOfItems];
@@ -405,11 +405,11 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.animateOverTime = functi
       timeStart = time;
     }
 
-    let timeElepsed = time - timeStart;
-    let complection = Math.min(timeElepsed / dur, 1);
+    let timeElapsed = time - timeStart;
+    let complection = Math.min(timeElapsed / dur, 1);
     cb(complection);
 
-    if (timeElepsed < dur) {
+    if (timeElapsed < dur) {
       requestAnimationFrame(_animateOverTime);
     } else {
       if (typeof fin === 'function') {
@@ -515,12 +515,16 @@ _core__WEBPACK_IMPORTED_MODULE_0__["default"].prototype.click = function (handle
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _lib_lib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./lib/lib */ "./src/js/lib/lib.js");
-// import './lib/lib';
 
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button').on('click', function () {
-  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])(this).toggleClass('active');
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('#first').on('click', () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('div').eq(1).fadeOut(800);
 });
-Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button').fadeIn(4800);
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('[data-count="second"]').on('click', () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('div').eq(2).fadeOut(800);
+});
+Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('button').eq(2).on('click', () => {
+  Object(_lib_lib__WEBPACK_IMPORTED_MODULE_0__["default"])('.w-500').fadeOut(800);
+});
 
 /***/ })
 
