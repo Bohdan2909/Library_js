@@ -5,4 +5,4 @@ $('button').on('click', function(){
   $(this).toggleClass('active');
 });
 
-$('button').html('Hello');
+$('button').fadeIn(4800);
