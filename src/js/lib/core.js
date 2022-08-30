@@ -22,16 +22,16 @@
 //   window.$ = $;
 // })();
 
-const $ = function(selector){
+const $ = function (selector) {
   return new $.prototype.init(selector);
 };
 
 $.prototype.init = function (selector) {
-  if (!selector){
-    return this;// {}
+  if (!selector) {
+    return this; // {}
   }
 
-  if (selector.tagName){
+  if (selector.tagName) {
     this[0] = selector;
     this.length = 1;
     return this;
@@ -44,6 +44,6 @@ $.prototype.init = function (selector) {
 
 $.prototype.init.prototype = $.prototype;
 
- window.$ = $;
+window.$ = $;
 
- export default $;
+export default $;

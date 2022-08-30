@@ -1,5 +1,4 @@
 import $ from '../core';
-
 $.prototype.html = function (content) {
   for (let i = 0; i < this.length; i++) {
     if (content) {
@@ -112,4 +111,3 @@ $.prototype.siblings = function () {
 
   return this;
 };
-
